@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-sm navbar-brand bg-brand">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">I'm an Icon</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="openDropdown()"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" [ngClass]="{ show: showDropdown }">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <ng-container *ngFor="let item of navItems">
+          <li>
+            <a
+              class="nav-link"
+              routerLink="{{ item.path }}"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >{{ item.label }}</a
+            >
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+    <app-avatar></app-avatar>
+  </div>
+</nav>

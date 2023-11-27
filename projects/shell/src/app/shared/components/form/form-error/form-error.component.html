@@ -1,0 +1,38 @@
+<!-- TODO: Add styles -->
+<ng-container>
+  <small
+    *ngIf="control?.errors?.['required'] && (control?.dirty || control?.touched)"
+  >
+    This field is required
+  </small>
+  <small
+    *ngIf="control?.errors?.['maxlength'] && (control?.dirty || control?.touched)"
+  >
+    {{'The max length of this field is ' + control?.errors?.['maxlength'].requiredLength}}
+  </small>
+  <small
+    *ngIf="control?.errors?.['minlength'] && (control?.dirty || control?.touched)"
+  >
+    {{'Must be exactly ' + control?.errors?.['minlength'].requiredLength + ' characters long'}}
+  </small>
+  <small
+    *ngIf="control?.errors?.['dateInTheFuture'] && (control?.dirty || control?.touched)"
+  >
+    Date must not be in the future
+  </small>
+  <small
+    *ngIf="control?.errors?.['max'] && (control?.dirty || control?.touched)"
+  >
+    {{'The max value of this field is ' + control?.errors?.['max'].max}}
+  </small>
+  <small
+    *ngIf="control?.errors?.['min'] && (control?.dirty || control?.touched)"
+  >
+    {{'The min value of this field is ' + control?.errors?.['min'].min}}
+  </small>
+  <small
+    *ngIf="control?.errors?.['matching'] && (control?.dirty || control?.touched)"
+  >
+    Passwords does not match
+  </small>
+</ng-container>

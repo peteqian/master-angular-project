@@ -1,0 +1,74 @@
+<div class="dropdown">
+  <!-- <ng-container *ngIf="user">
+    <ng-container *ngTemplateOutlet="userLoggedIn"></ng-container>
+    <ng-template #userLoggedIn>
+      <a class="btn dropdown-toggle" (click)="toggleDropdown()">
+        <span>{{ initials }}</span>
+      </a>
+    </ng-template>
+  </ng-container>
+
+  <ng-container *ngIf="!user">
+    <ng-container *ngTemplateOutlet="userNotLoggedIn"></ng-container>
+    <ng-template #userNotLoggedIn>
+      <a class="btn dropdown-toggle" (click)="toggleDropdown()">
+        <span>Not logged in!</span>
+      </a>
+    </ng-template>
+  </ng-container> -->
+  <a *ngIf="user" class="btn dropdown-toggle" (click)="toggleDropdown()">
+    <span>{{ initials }}</span>
+  </a>
+  <a *ngIf="!user" class="btn dropdown-toggle" (click)="toggleDropdown()">
+    Not logged in!
+  </a>
+  <ul
+    [ngClass]="{ show: showDropdownMenu }"
+    class="dropdown-menu text-small"
+    style="
+      position: absolute;
+      inset: 0px auto auto 0px;
+      margin: 0px;
+      transform: translate3d(-20px, 34.4px, 0px);
+    "
+  >
+    <!-- <ng-template *ngIf="user">
+      <ng-container *ngTemplateOutlet="userLoggedIn"></ng-container>
+      <ng-template #userLoggedIn>
+        <li>
+          <a class="dropdown-item" routerLink="/account">Profile</a>
+        </li>
+        <li><hr class="dropdown-divider" /></li>
+        <li>
+          <a class="dropdown-item" href="#" (click)="logout()">Sign out</a>
+        </li>
+      </ng-template>
+    </ng-template>
+    <ng-template *ngIf="!user">
+      <ng-container *ngTemplateOutlet="userNotLoggedIn"></ng-container>
+      <ng-template #userNotLoggedIn>
+        <li>
+          <a class="dropdown-item" href="#" (click)="login()">Sign in</a>
+        </li>
+      </ng-template>
+    </ng-template> -->
+    <ng-container *ngIf="user">
+      <li>
+        <a class="dropdown-item" routerLink="/account">Profile</a>
+      </li>
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <a
+          class="dropdown-item"
+          href="#"
+          (click)="logout()"
+          data-test="avatar.dropdown.logout"
+          >Sign out</a
+        >
+      </li>
+    </ng-container>
+    <li *ngIf="!user">
+      <button class="dropdown-item" (click)="login()">Sign in</button>
+    </li>
+  </ul>
+</div>

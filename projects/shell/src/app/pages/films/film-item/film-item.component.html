@@ -1,0 +1,30 @@
+<a
+  style="cursor: pointer"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+  class="list-group-item clearfix"
+>
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ film.title }}</h4>
+    <p
+      class="list-group-item-text"
+      data-test="film.episode_id"
+    >
+      Episode: {{ film.episode_id }}
+    </p>
+    <p
+      class="list-group-item-text"
+      [attr.data-test-item-film-director]="film.director"
+    >
+      Film Director: {{ film.director }}
+    </p>
+  </div>
+  <span class="pull-right">
+    <!-- <img
+      [src]="film.imagePath"
+      alt="{{ film.name }}"
+      class="img-responsive"
+      style="max-height: 50px"
+    /> -->
+  </span>
+</a>

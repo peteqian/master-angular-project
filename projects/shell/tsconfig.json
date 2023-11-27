@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@config": ["src/app/config"],
+      "@shared": ["src/app/shared"],
+      "@shared/*": ["src/app/shared/*"],
+      "@libs": ["src/app/shared/libs"],
+      "@libs/*": ["src/app/shared/libs/*"],
+      "@environment": ["src/environments/environment"],
+      "auth-lib": ["../../dist/auth-lib"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    "strictNullChecks": false
+  }
+}

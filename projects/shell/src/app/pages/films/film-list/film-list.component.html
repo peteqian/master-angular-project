@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNewFilm()">New Film</button>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-xs-12">
+    <app-film-item
+      *ngFor="let film of films | async; let i = index"
+      [film]="film"
+      [index]="i"
+    >
+    </app-film-item>
+  </div>
+</div>

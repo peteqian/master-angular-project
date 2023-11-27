@@ -1,0 +1,12 @@
+<div
+  class="fieldset-item"
+  [ngClass]="{
+    'is-invalid': control?.invalid && (control?.dirty || control?.touched)
+  }"
+>
+  <ng-content select="label"></ng-content>
+  <div>
+    <ng-content></ng-content>
+    <form-error [control]="control"></form-error>
+  </div>
+</div>

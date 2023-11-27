@@ -1,0 +1,55 @@
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold text-body-emphasis">Welcome</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">All-in-one Angular application 😀</p>
+  </div>
+</div>
+<h1 class="pb-2 border-bottom">Some Interactive Stuff</h1>
+<div class="container px-4 py-5" id="featured-3">
+  <div class="row">
+    <h2 class="pb-2 border-bottom">Double-Binding</h2>
+    <div class="row g-4 py-1 row-cols-1 row-cols-lg-2">
+      <div class="feature col">
+        <label> Name: {{ name }} </label>
+      </div>
+      <div class="feature col">
+        <label for="font-size"
+          >Change name label here 😀: <input id="font-size" [(ngModel)]="name"
+        /></label>
+      </div>
+    </div>
+    <div class="row g-4 py-1 row-cols-1 row-cols-lg-2">
+      <div class="feature col">
+        <label> Date with Pipe: {{ date | dateFormat }} </label>
+      </div>
+      <div class="feature col">
+        <label for="font-size"
+          >Change date here: <input id="font-size" [(ngModel)]="date"
+        /></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h2 class="pb-2 border-bottom">Ng-Styles</h2>
+    <label for="canSave"
+      >italic: <input id="canSave" type="checkbox" [(ngModel)]="canSave"
+    /></label>
+    <label for="isUnchanged"
+      >normal:
+      <input id="isUnchanged" type="checkbox" [(ngModel)]="isUnchanged"
+    /></label>
+    <label for="isSpecial"
+      >xlarge: <input id="isSpecial" type="checkbox" [(ngModel)]="isSpecial"
+    /></label>
+    <button type="button" (click)="setCurrentStyles()">
+      Refresh currentStyles
+    </button>
+    <br /><br />
+    <div [ngStyle]="currentStyles">
+      This div should be {{ canSave ? "italic" : "plain" }}
+      {{ isUnchanged ? "normal weight" : "bold" }} and,
+      {{ isSpecial ? "extra large" : "normal size" }} after clicking "Refresh".
+    </div>
+  </div>
+</div>

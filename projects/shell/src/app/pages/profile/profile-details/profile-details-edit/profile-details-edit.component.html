@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h3 class="">My Profile</h3>
+    </div>
+  </div>
+  <div class="row">
+    <form class="row g-3">
+      <div [formGroup]="profileForm" class="mb-3">
+        <fieldset class="flow">
+          <form-field>
+            <label class="form-label" for="username">Username</label>
+            <input
+              class="form-control"
+              type="text"
+              id="username"
+              formControlName="username"
+              value="Read-only"
+              readonly="readonly"
+            />
+          </form-field>
+        </fieldset>
+      </div>
+    </form>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="saveProfile()">
+    Save
+  </button>
+</div>
