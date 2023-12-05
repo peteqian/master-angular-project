@@ -21,4 +21,9 @@ export class HeroesComponent {
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
+
+  saveHero(hero: Hero): void {
+    console.debug('Saving hero', hero);
+    this.heroService.updateHero(hero).subscribe();
+  }
 }

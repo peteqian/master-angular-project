@@ -5,9 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { HeroesComponent } from './heroes.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
   imports: [CommonModule, HeroesRoutingModule, FormsModule, HttpClientModule],
-  declarations: [HeroesComponent],
+  declarations: [HeroesComponent, HeroDetailComponent],
 })
 export class HeroesModule {}

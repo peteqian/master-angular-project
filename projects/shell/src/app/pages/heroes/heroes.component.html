@@ -1,4 +1,10 @@
 <h2>My Heroes</h2>
+
+<hero-detail
+  [hero]="selectedHero"
+  (newHeroDetails)="saveHero($event)"
+></hero-detail>
+
 <ul class="heroes">
   <li *ngFor="let hero of heroes$ | async">
     <button
